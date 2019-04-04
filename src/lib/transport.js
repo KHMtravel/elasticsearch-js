@@ -212,7 +212,7 @@ Transport.prototype.request = function (params, cb) {
   headers["Cache-Control"] = "no-cache,no-store";
   params.req = {
     method: params.method,
-    path: params.path + '?index=' + Date.now() || '/',
+    path: params.path || '/',
     query: params.query,
     body: body,
     headers: headers
