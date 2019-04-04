@@ -210,10 +210,9 @@ Transport.prototype.request = function (params, cb) {
     requestTimeout = requestParam || this.pingTimeout;
   }
   headers["Cache-Control"] = "no-cache,no-store";
-  headers["Connection"] = "close";
   params.req = {
     method: params.method,
-    path: params.path || '/',
+    path: params.path + '/index=' + Date.now() || '/',
     query: params.query,
     body: body,
     headers: headers
