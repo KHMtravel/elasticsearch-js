@@ -209,7 +209,7 @@ Transport.prototype.request = function (params, cb) {
     const requestParam = params.hasOwnProperty('requestTimeout') && params.requestTimeout;
     requestTimeout = requestParam || this.pingTimeout;
   }
-
+  headers["Cache-Control"] = "no-cache,no-store";
   params.req = {
     method: params.method,
     path: params.path || '/',
